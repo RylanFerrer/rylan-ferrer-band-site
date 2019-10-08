@@ -13,15 +13,32 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 32px;
-    
+    display: flex;
+    align-items: center;
 
     &__header {
         padding: 0 5%;
-        position: absolute;
-        top:30%;
+    
+        
         color: $white;
         margin:0;
     
     }
+    
+}
+
+@include medium {
+    .hero {
+        height:400px;
+        font-size: 36px;
+        line-height: 44px;
+    &__header {
+        padding: 0 3.125%;
+    }
+
+    }
+
+
+
 }
 

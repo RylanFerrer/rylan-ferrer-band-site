@@ -1,6 +1,4 @@
 .gallery {
-
-  
     padding: 0 5%;
     background-color: $mercury;
     &__heading {
@@ -11,12 +9,30 @@
     }
 
     &__photos {
-    
-
         &-art {
             margin:0 0 16px 0;
             width: 100%;
+        }
+    }
+}
 
+@include medium {
+    .gallery {
+        padding: 0 3.125%;
+        &__heading {
+        font-size:24px;
+        line-height: 32px;
+        }
+
+        &__photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            &-art {
+                width:29.17%;
+                height: 126px;
+            }
         }
     }
 }

@@ -38,41 +38,32 @@
 }
 
 @include medium {
-
-
 .navbar {
     padding: 0 3.125%;
     height: 80px;
     background-color: $black;
     display: flex;
     align-items: flex-end;
-    &::after {
-        content: "";
-        display: block;
-        clear: both;
-    }
 
     &__menu {
         list-style-type: none;
         color: $white;
-
-        
-      
+        margin:0;
         
         &-item {
             display: inline-block;
-            margin: 0 28px;
+            padding-bottom: 20px;
+            margin: 0 20px;
             line-height: 20px;
             
             &--active {
-            
-                padding-bottom: 20px;
-                border-bottom: 5px solid white;
+            border-bottom: 3px solid white;
             }
         }
 
         &-logo {
-        
+            padding: 0;
+            margin:auto 0;
         }
 
         
