@@ -1,0 +1,114 @@
+@font-face {
+  font-family: AvenirRegular;
+  src: url("../assets/fonts/AvenirRegular.otf");
+}
+
+@font-face {
+  font-family: AvenirBold;
+  src: url("../assets/fonts/AvenirBold.otf");
+}
+
+.navbar {
+  padding: 0 12.5%;
+  height: 80px;
+  background-color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navbar__menu {
+  list-style-type: none;
+  color: #FFF;
+  float: left;
+  padding-left: 0;
+}
+
+.navbar__menu-item {
+  display: inline-block;
+  margin: 0 28px;
+  line-height: 20px;
+}
+
+.navbar__menu-item--active {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 5px solid white;
+}
+
+.navbar__menu-logo {
+  margin-right: 28px;
+}
+
+.hero {
+  font-family: AvenirBold;
+  font-size: 36px;
+  position: relative;
+  width: 100%;
+  height: 670px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../assets/images/guitar.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/guitar.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 48px;
+}
+
+.hero__header {
+  color: #FFF;
+  position: absolute;
+  top: 30%;
+  margin: 0;
+  padding: 0 12.5%;
+}
+
+.about {
+  color: #323232;
+  font-family: AvenirBold;
+  font-size: 24px;
+  line-height: 32px;
+  padding: 0 12.5%;
+}
+
+.about__heading {
+  margin: 0 0 48px 0;
+}
+
+.about__content {
+  padding: 0 92px;
+}
+
+.about__content-image {
+  width: 896px;
+  height: 450px;
+  margin-bottom: 48px;
+}
+
+.about__content-header {
+  margin: 0 0 40px 0;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.about__content-subheader {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: AvenirRegular;
+  margin: 0;
+}
+/*# sourceMappingURL=main.css.map */
