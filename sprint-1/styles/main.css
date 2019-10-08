@@ -1,3 +1,6 @@
+/* media query for tablet */
+/* media query for landscape, medium pixel density desktops */
+/* media query for high pixel density desktops */
 @font-face {
   font-family: AvenirRegular;
   src: url("../assets/fonts/AvenirRegular.otf");
@@ -48,7 +51,39 @@
   padding-top: 16px;
 }
 
-/*.navbar {
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 0 3.125%;
+    height: 80px;
+    background-color: #323232;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .navbar::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .navbar__menu {
+    list-style-type: none;
+    color: #FFF;
+  }
+  .navbar__menu-item {
+    display: inline-block;
+    margin: 0 28px;
+    line-height: 20px;
+  }
+  .navbar__menu-item--active {
+    padding-bottom: 20px;
+    border-bottom: 5px solid white;
+  }
+}
+
+/* .navbar {
     padding: 0 12.5%;
     height: 80px;
     background-color: $black;
@@ -87,9 +122,7 @@
         
     }
 
-}
-
-*/
+} */
 .hero {
   font-family: AvenirBold;
   position: relative;
@@ -227,6 +260,41 @@
 .gallery__photos-art {
   margin: 0 0 16px 0;
   width: 100%;
+}
+
+.footer {
+  background-color: #323232;
+  padding: 0 5%;
+}
+
+.footer__heading {
+  margin: 0;
+  padding-top: 32px;
+  font-family: AvenirBold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFF;
+}
+
+.footer__social-media {
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+.footer__person {
+  color: white;
+  font-family: AvenirBold;
+}
+
+.footer__person-name {
+  margin-bottom: 10px;
+}
+
+.footer__person-address, .footer__person-information {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: AvenirRegular;
+  margin-bottom: 10px;
 }
 
 html,

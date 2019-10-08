@@ -37,7 +37,52 @@
     }
 }
 
-/*.navbar {
+@include medium {
+
+
+.navbar {
+    padding: 0 3.125%;
+    height: 80px;
+    background-color: $black;
+    display: flex;
+    align-items: flex-end;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    &__menu {
+        list-style-type: none;
+        color: $white;
+
+        
+      
+        
+        &-item {
+            display: inline-block;
+            margin: 0 28px;
+            line-height: 20px;
+            
+            &--active {
+            
+                padding-bottom: 20px;
+                border-bottom: 5px solid white;
+            }
+        }
+
+        &-logo {
+        
+        }
+
+        
+    }
+
+}
+
+}
+
+/* .navbar {
     padding: 0 12.5%;
     height: 80px;
     background-color: $black;
@@ -76,6 +121,4 @@
         
     }
 
-}
-
-*/
+} */
