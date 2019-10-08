@@ -1,5 +1,43 @@
 .about {
     color: $black;
+    margin-bottom: 40px;
+    font-family: AvenirBold;
+    font-size:14px;
+    line-height: 22px;
+    padding: 0 5%;
+    &__content{
+        &-image {
+            width:100%;
+            margin-bottom: 24px;
+
+    
+        }
+        &-text {
+            margin: 0 0 32px 0;
+            font-size:14px;
+            line-height: 18px;
+        }
+        &-sub-header {
+            font-size: 13px;
+            line-height: 18px;
+            margin:0 0 40px 0;
+        }
+      
+
+    }
+    &__article-paragraph{
+        font-family: AvenirRegular;
+    }
+    &__article-heading {
+        font-family: AvenirBold;
+        font-size:14px;
+        line-height: 22px;
+        margin-bottom: 24px;
+
+    }
+}
+/*.about {
+    color: $black;
     font-family: AvenirBold;
     font-size:24px;
     line-height: 32px;
@@ -31,5 +69,32 @@
         }
 
     }
+    &__article {
+        margin-bottom: 48px;
+        &-header {
+            margin:56px 0 32px 0;
+            font-size:24px;
+            line-height: 32px;
+        }
+        &-paragraph-left, &-paragraph-right  {
+            font-family: AvenirRegular;
+            font-size:14px;
+            line-height: 22px;
+            width: 420px;
+            display: inline-block;
+            margin:0;
+        }
+        
+        &-paragraph-left {
+            margin-right: 20px;
+        }
+        &-paragraph-right {
+            margin-left: 20px;
+        }
+        
+    }
    
+    
 }
+
+*/

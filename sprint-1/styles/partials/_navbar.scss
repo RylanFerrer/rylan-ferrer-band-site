@@ -1,4 +1,43 @@
 .navbar {
+    padding: 0 5%;
+    background-color: $black;
+    height: 80px;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    &__menu {
+        list-style-type: none;
+        color: $white;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-around;
+    
+        &-item {
+            margin:0;
+            width:50%;
+            text-align: center;
+            
+            &--active {
+            
+            
+                border-bottom: 4px solid white;
+                padding-bottom: 5px;
+            }
+
+        }
+        &-logo {
+            display:block;
+            margin: 0  auto 16px auto;
+            padding-top: 16px;
+
+        }
+    }
+}
+
+/*.navbar {
     padding: 0 12.5%;
     height: 80px;
     background-color: $black;
@@ -38,3 +77,5 @@
     }
 
 }
+
+*/
