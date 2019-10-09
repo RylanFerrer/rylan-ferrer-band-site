@@ -31,6 +31,11 @@
             justify-content: space-evenly;
 
             &-art {
+                filter: grayscale(100%);
+                transition: all 0.5s;
+                &:hover {
+                    filter: grayscale(0);
+                }
                 width:29.17%;
                 height: 126px;
             }
@@ -51,13 +56,16 @@
         }
 
         &__photos {
+           
             justify-content: space-evenly;
             margin-bottom: 40px;
             &-art {
+              
                 width: 31.85%;
                 height: 193px;
-            
+               
             }
+        
         }
     }
 }
