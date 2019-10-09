@@ -55,7 +55,7 @@
             padding-bottom: 20px;
             margin: 0 20px;
             line-height: 20px;
-            
+
             &--active {
             border-bottom: 3px solid white;
             }
@@ -63,7 +63,7 @@
 
         &-logo {
             padding: 0;
-            margin:auto 0;
+            margin: auto 0;
         }
 
         
@@ -72,7 +72,20 @@
 }
 
 }
-
+@include huge {
+    .navbar {
+        padding: 0 12.5%;
+        &__menu{
+            &-logo {
+                margin-right:28px;
+            }
+            &-item {
+                margin: 0 28px;
+            }
+        }
+       
+    }
+}
 /* .navbar {
     padding: 0 12.5%;
     height: 80px;

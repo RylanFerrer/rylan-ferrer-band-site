@@ -38,7 +38,11 @@
 
     }
 
+}
 
-
+@include huge {
+    .hero {
+        height: 670px;
+    }
 }
 
