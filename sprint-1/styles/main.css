@@ -23,6 +23,7 @@
 }
 
 .navbar__menu {
+  color: #e1e1e1;
   list-style-type: none;
   color: #FFF;
   padding-left: 0;
@@ -40,12 +41,17 @@
 }
 
 .navbar__menu-item-link {
-  color: white;
+  color: #AFAFAF;
+  text-decoration: none;
+}
+
+.navbar__menu-item-link--active {
+  color: #FFF;
   text-decoration: none;
 }
 
 .navbar__menu-item--active {
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid #FFF;
   padding-bottom: 5px;
 }
 
@@ -248,65 +254,6 @@
   }
 }
 
-/*.about {
-
- 
-
-    &__heading {
-        margin: 0 0 48px 0 ;
-    }
-    &__content {
-        padding:0 92px;
-        &-image {
-            width: 896px;
-            height:450px;
-            margin-bottom:48px;
-
-            
-        }
-        &-header {
-            margin: 0 0 40px 0;
-            font-size:24px;
-            line-height: 32px;
-
-        }
-
-        &-subheader {
-            font-size:16px;
-            line-height: 24px;
-            margin:0;
-        }
-
-    }
-    &__article {
-        margin-bottom: 48px;
-        &-header {
-            margin:56px 0 32px 0;
-            font-size:24px;
-            line-height: 32px;
-        }
-        &-paragraph-left, &-paragraph-right  {
-            font-family: AvenirRegular;
-            font-size:14px;
-            line-height: 22px;
-            width: 420px;
-            display: inline-block;
-            margin:0;
-        }
-        
-        &-paragraph-left {
-            margin-right: 20px;
-        }
-        &-paragraph-right {
-            margin-left: 20px;
-        }
-        
-    }
-   
-    
-}
-
-*/
 .gallery {
   padding: 0 5%;
   background-color: #e1e1e1;
@@ -326,7 +273,6 @@
 
 @media only screen and (min-width: 768px) {
   .gallery {
-    background-color: #FFF;
     padding: 0 3.125%;
   }
   .gallery__heading {
@@ -342,6 +288,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    padding-bottom: 30px;
   }
   .gallery__photos-art {
     -webkit-filter: grayscale(100%);
@@ -371,7 +318,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
   .gallery__photos-art {
     width: 31.85%;
@@ -423,6 +370,7 @@
   line-height: 18px;
   font-family: AvenirRegular;
   margin: 0;
+  padding-bottom: 32px;
 }
 
 .footer__copyright--mobile-align {
@@ -467,6 +415,7 @@
     display: block;
     font-size: 13px;
     line-height: 18px;
+    padding-bottom: 32px;
     margin: 0;
     color: #FFF;
   }
@@ -495,6 +444,9 @@
   }
   .footer__person {
     margin-right: 58px;
+  }
+  .footer__copyright {
+    padding-bottom: 48px;
   }
 }
 

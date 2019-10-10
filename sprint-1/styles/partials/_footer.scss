@@ -40,6 +40,7 @@
         line-height: 18px;
         font-family: AvenirRegular;
         margin:0; 
+        padding-bottom: 32px;
         &--mobile-align {
             display:block;
         }
@@ -89,6 +90,7 @@
             display: block;
             font-size: 13px;
             line-height: 18px;
+            padding-bottom: 32px;
             margin:0;
             color: $white;  
             &--mobile-align {
@@ -121,6 +123,10 @@
         }
         &__person {
             margin-right: 58px;
+        }
+
+        &__copyright {
+            padding-bottom:48px;
         }
     }
   

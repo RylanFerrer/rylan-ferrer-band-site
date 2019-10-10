@@ -7,6 +7,7 @@
         clear: both;
    }
     &__menu {
+        color: $mercury;
         list-style-type: none;
         color: $white;
         padding-left: 0;
@@ -17,11 +18,16 @@
             width:50%;
             text-align: center;
             &-link {
-                color:white;
+                color: $silver;
                 text-decoration: none;
+                &--active {
+                    color: $white;
+                    text-decoration: none;
+                    
+                }
            }
             &--active {
-                border-bottom: 4px solid white;
+                border-bottom: 4px solid $white;
                 padding-bottom: 5px;
            }
        }
