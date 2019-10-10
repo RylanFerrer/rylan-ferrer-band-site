@@ -1,10 +1,9 @@
 .hero {
+    display: flex;
+    align-items: center;
     font-family: AvenirBold;
-    position: relative;
     font-size:14px;
     line-height: 22px;
-    height:183px;
-    width:100%;
     background-image: linear-gradient(
         rgba($black,0.5),
         rgba($black,0.5)
@@ -12,9 +11,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height:183px;
+    width:100%;
     margin-bottom: 32px;
-    display: flex;
-    align-items: center;
 
     &__header {
         padding: 0 5%;
@@ -30,22 +29,20 @@
         height:400px;
         font-size: 36px;
         line-height: 44px;
-    &__header {
-        padding: 0 3.125%;
-    }
+        &__header {
+            padding: 0 3.125%;
+        }
 
     }
-
 }
 
 @include huge {
     .hero {
         height: 670px;
-        padding-left: 12.5%;
-        
         &__header {
+            padding:0 12.5%;
             margin: 0;
-            padding:0;
+    
            
         }
     }

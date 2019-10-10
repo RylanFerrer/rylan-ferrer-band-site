@@ -6,66 +6,54 @@
         font-family: AvenirBold;
         font-size:14px;
         line-height: 22px;
-    }
-
+   }
     &__photos {
         &-art {
             margin:0 0 16px 0;
             width: 100%;
-        }
-    }
+       }
+   }
 }
-
 @include medium {
     .gallery {
         background-color: $white;
         padding: 0 3.125%;
         &__heading {
-        font-size:24px;
-        line-height: 32px;
-        }
-
+            font-size:24px;
+            line-height: 32px;
+       }
         &__photos {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
-
             &-art {
                 filter: grayscale(100%);
                 transition: all 0.5s;
                 &:hover {
                     filter: grayscale(0);
-                }
+               }
                 width:29.17%;
                 height: 126px;
-            }
-        }
-    }
+           }
+       }
+   }
 }
 @include huge {
     .gallery {
-      
-      
         padding: 0 12.5%;
-
         &__heading {
             padding-top:48px;
             margin-bottom: 64px;
             font-size:36px;
             line-height: 44px;
-        }
-
+       }
         &__photos {
-           
             justify-content: space-evenly;
             margin-bottom: 40px;
             &-art {
-              
                 width: 31.85%;
                 height: 193px;
-               
-            }
-        
-        }
-    }
+           }
+       }
+   }
 }

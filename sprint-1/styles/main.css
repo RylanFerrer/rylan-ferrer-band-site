@@ -39,6 +39,11 @@
   text-align: center;
 }
 
+.navbar__menu-item-link {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar__menu-item--active {
   border-bottom: 4px solid white;
   padding-bottom: 5px;
@@ -46,7 +51,7 @@
 
 .navbar__menu-logo {
   display: block;
-  margin: 0  auto 16px auto;
+  margin: 0 auto 16px auto;
   padding-top: 16px;
 }
 
@@ -73,10 +78,6 @@
     margin: 0 20px;
     line-height: 20px;
   }
-  .navbar__menu-item-link {
-    color: white;
-    text-decoration: none;
-  }
   .navbar__menu-item--active {
     border-bottom: 3px solid white;
   }
@@ -98,65 +99,24 @@
   }
 }
 
-/* .navbar {
-    padding: 0 12.5%;
-    height: 80px;
-    background-color: $black;
-    display: flex;
-    align-items: center;
-    &::after {
-        content: "";
-        display: block;
-        clear: both;
-    }
-
-    &__menu {
-        list-style-type: none;
-        color: $white;
-        float:left;
-        padding-left: 0;
-        
-      
-        
-        &-item {
-            display: inline-block;
-            margin: 0 28px;
-            line-height: 20px;
-            
-            &--active {
-                margin-top: 30px;
-                padding-bottom: 20px;
-                border-bottom: 5px solid white;
-            }
-        }
-
-        &-logo {
-            margin-right: 28px;
-        }
-
-        
-    }
-
-} */
 .hero {
-  font-family: AvenirBold;
-  position: relative;
-  font-size: 14px;
-  line-height: 22px;
-  height: 183px;
-  width: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../assets/images/guitar.jpg");
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/guitar.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: AvenirBold;
+  font-size: 14px;
+  line-height: 22px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../assets/images/guitar.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/guitar.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 183px;
+  width: 100%;
+  margin-bottom: 32px;
 }
 
 .hero__header {
@@ -179,11 +139,10 @@
 @media only screen and (min-width: 1440px) {
   .hero {
     height: 670px;
-    padding-left: 12.5%;
   }
   .hero__header {
+    padding: 0 12.5%;
     margin: 0;
-    padding: 0;
   }
 }
 
@@ -459,6 +418,17 @@
   margin-bottom: 10px;
 }
 
+.footer__copyright {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: AvenirRegular;
+  margin: 0;
+}
+
+.footer__copyright--mobile-align {
+  display: block;
+}
+
 @media only screen and (min-width: 768px) {
   .footer__items {
     width: 100%;
@@ -497,7 +467,11 @@
     display: block;
     font-size: 13px;
     line-height: 18px;
+    margin: 0;
     color: #FFF;
+  }
+  .footer__copyright--mobile-align {
+    display: inline-block;
   }
 }
 
