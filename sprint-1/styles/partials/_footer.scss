@@ -28,6 +28,8 @@
             margin-bottom: 10px;
         }
         &-address, &-information {
+            color: $white;
+            text-decoration: none;
             font-size: 13px;
             line-height: 18px;
             font-family: AvenirRegular;
@@ -79,10 +81,12 @@
                 margin-bottom: 10px;
             }
             &-address, &-information {
+            
                 font-size: 13px;
                 line-height: 18px;
                 font-family: AvenirRegular;
                 margin-bottom: 10px;
+               
             }
         }
         

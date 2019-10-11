@@ -11,7 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height:183px;
+    height: 57.188vw;
     width:100%;
     margin-bottom: 32px;
 
@@ -26,7 +26,7 @@
 
 @include medium {
     .hero {
-        height:400px;
+        height:50.1vw;
         font-size: 36px;
         line-height: 44px;
         &__header {
@@ -38,7 +38,7 @@
 
 @include huge {
     .hero {
-        height: 670px;
+        height: 46.53vw;
         &__header {
             padding:0 12.5%;
             margin: 0;
