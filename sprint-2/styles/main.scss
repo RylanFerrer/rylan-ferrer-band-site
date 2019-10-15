@@ -1,0 +1,18 @@
+
+@charset 'utf-8';
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/navbar";
+@import "./partials/hero";
+@import "./partials/about";
+@import "./partials/gallery";
+@import "./partials/shows";
+@import "./partials/footer";
+
+html,
+body {
+    height: 100vh;
+    font-family: AvenirRegular;
+    margin:0;
+}
