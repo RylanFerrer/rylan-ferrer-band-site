@@ -1,5 +1,6 @@
 const comments = [
     {
+      avatar: "./assets/images/avatar.jpg",
       name: "Micheal Lyons",
       date: "12/18/2018",
       comment:
@@ -21,25 +22,23 @@ const comments = [
    ];
 
 
-   const commentSection = document.getElementById("comments");
-   const form = document.getElementById("comment__form");
+   const commentSection = document.getElementById("commentz");
+   const form = document.getElementById("form-section");
    let d = new Date();
    let today = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear(); 
    
    function clearComments()
    {
-    let div = commentSection.getElementsByTagName('div');
+    let div = commentSection.getElementsByClassName('comment-box');
+    
     for(var i = comments.length; i > 0;i--)
     {
-    
         commentSection.removeChild(div[i -1]);
     }
      
    }
    
-   fillCommentSection();
-
-   
+  
 
    form.addEventListener("submit", submitEvent => {
         submitEvent.preventDefault();
@@ -52,33 +51,46 @@ const comments = [
         fillCommentSection();
    });
   
-   function addCommentClasses(name,date,comment)
+   function addCommentClasses(name,date,comment,image,header,div)
    {
     name.classList.add("comment-box__name");
     date.classList.add("comment-box__date");
     comment.classList.add("comment-box__comment");
+    image.classList.add("comment-box__avatar");
+    header.classList.add("comment-box__header")
+    div.classList.add("comment-box");
+
    }
    
    function addCommentInfo (section, data,index) {
         let divNode = document.createElement("div");
+        let divHeaderNode = document.createElement("div");
         let nameNode = document.createElement("h5");
         let dateNode = document.createElement("h5");
         let commentNode = document.createElement("h5");
+        let imgNode = document.createElement("img");
         
-        //add text into div
+        //add content into nodes
         nameNode.innerText = data[index].name;
         dateNode.innerText  = data[index].date;
+
         commentNode.innerText = data[index].comment;
+        imgNode.src = data[index].avatar;
+   
     
    
         //add classes 
-        addCommentClasses(nameNode,dateNode,commentNode);
+        addCommentClasses(nameNode,dateNode,commentNode,imgNode,divHeaderNode,divNode);
 
 
         //append into div
-        divNode.appendChild(nameNode);
-        divNode.appendChild(dateNode);
+        //divNode.appendChild(imgNode);
+        divHeaderNode.appendChild(nameNode);
+        divHeaderNode.appendChild(dateNode);
+
+        divNode.appendChild(divHeaderNode);
         divNode.appendChild(commentNode);
+       
 
         //append to section
         section.appendChild(divNode);
@@ -92,6 +104,7 @@ const comments = [
         }
    }
 
+   fillCommentSection();
    
    
    

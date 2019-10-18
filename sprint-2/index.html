@@ -77,25 +77,36 @@
       </div>
       <!--Photo Gallery End-->
       <!--Comments Section Start-->
-      <h2>Join the conversation</h2>
-      <form id="comment__form" class = "form">
-         <h5 class="form__name">name</h5>
-         <input
-           type="text"
-           name="firstName"
-           placeholder="Name"
-         />
-         <h5 >comment</h5>
-         <input
-           type="text"
-           name="comment"
-           placeholder=" Add a new comment"
-         />
-         <div class="comments-section">
-           <input class="comment__send__button" type="submit" value="comment"/>
-         </div>
-       </form>
-       <div id = "comments"></div>
+      <div class = "comments">
+         <h2 class = "comments__header">Join the conversation</h2>
+            <div class = "comments__form-box">
+                  <img class = "comments-img" src="./assets/images/avatar.jpg" alt="avatar">
+                  <div class = "comments__form-section">
+                        <form id="form-section">
+                              <h5 class="comments__form-header">name</h5>
+                              <input class = "comments__form-name"
+                                type="text"
+                                name="firstName"
+                                placeholder="Name"
+                              />
+                              <h5 class="comments__form-header">comment</h5>
+                              <input class = "comments__form-textbox"
+                                type="text"
+                                name="comment"
+                                placeholder=" Add a new comment"
+                              />
+                           
+                                <button class="comments__form-button" type="submit" value="comment">COMMENT</button>
+                              
+                        </form>
+                  </div>
+               </div>
+      </div>
+
+            
+                <div id = "commentz"></div>
+   
+     
       <!--Comments Section End -->
       <!--Footer Start-->
       <footer class = "footer">

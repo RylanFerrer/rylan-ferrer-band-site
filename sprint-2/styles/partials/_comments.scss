@@ -1,0 +1,60 @@
+.comments {
+    padding: 0 5%;
+    &-img {
+        height:30px;
+        width:30px;
+        border-radius: 50%;
+        margin-top:28px;
+    }
+    &__form-box 
+    {
+        display: flex;
+        border-bottom: 2px solid $silver;
+    }
+    &__form {
+        &-section {
+            width: 80%;
+            margin-left:auto;
+        }
+
+        &-header {
+            text-transform: uppercase;
+            color:$mercury;
+            margin:0 0 10px 0;
+        }
+        &-name {
+            background-color: $mercury;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid $silver;
+            width:100%;
+            margin-bottom: 20px;
+        }
+        &-button {
+            width: 100%;
+            margin: 15px 0 32px 0;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #323232;
+            color: white;
+        }
+        &-textbox{
+            height:100px;
+            width:100%;
+            background-color: $mercury;
+            border:2px solid $silver;
+        }
+
+       
+        
+    }
+}
+.comment-box {
+    border-bottom: 2px solid $silver;
+        padding: 0 5%;
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+}
