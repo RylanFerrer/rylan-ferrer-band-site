@@ -7,12 +7,22 @@ var shows = [
 
 
 ]
-const mobileTable = document.getElementById("mobile-table");
-const desktopTable = document.getElementById("desktop-table");
+//table variables
+const showKeys = Object.keys(shows[0]);
+const table = document.getElementById("main-table");
+//Initialize Tables
+createTable(table,shows);
+createTableHead(table,showKeys);
+
+createMobileTable(table,shows); 
+
+
+
 
 function createTableHead(table, shows) {
     var tHead = table.createTHead();
     var row = tHead.insertRow();
+    row.classList.add( "shows__info-row-desktop");
     for (var show of shows) {
       
         var th = document.createElement('th');
@@ -27,7 +37,7 @@ function createTableHead(table, shows) {
 function createTable(table, shows) {
     for (var show of shows) {
         var row = table.insertRow();
-        row.classList.add("shows__info-row--border");
+        row.classList.add("shows__info-row--border", "shows__info-row-desktop");
 
         for (key in show) {
         
@@ -48,8 +58,7 @@ function createTable(table, shows) {
     }
     
 }
-//s
-var showKeys = Object.keys(shows[0]);
+
 
 
 function createMobileTable(table,data)
@@ -58,10 +67,24 @@ function createMobileTable(table,data)
     {
         for (key in show )
         {
+            //keys
+            /* 
+            let keyRow = table.insertRow();
+            let keyCell = keyRow.insertCell();
+
+             let h4 = document.createElement("h4");
+             h4.appendChild(key.toUpperCase());
+            keyCell.appendChild(h4);
+            
+            
+            
+            */
             let header = key.toUpperCase();
             let row = table.insertRow();
+            row.classList.add("shows__info-row-mobile");
             let cell = row.insertCell();
-           
+
+            //data
             let text = document.createTextNode(show[key]);
             let textNode = document.createElement("h4");
             textNode.appendChild(text);
@@ -85,6 +108,7 @@ function createMobileTable(table,data)
 
 function createButton(table,type) {
     let row = table.insertRow();
+    row.classList.add("shows__info-row-mobile");
     let buttonCell = row.insertCell();
     let buttonNode = document.createElement("button");
     buttonCell.classList.add("shows__info-border");
@@ -93,28 +117,40 @@ function createButton(table,type) {
     buttonCell.appendChild(buttonNode);
 }
 
-
+function changeRowDisplay(type, rowClass)
+{
+    if (type === "remove")
+    {
+        for(let i = 0; i < rowClass.length; i++)
+        {
+            rowClass[i].style.display = 'none';
+        }
+    }
+    else if (type === "add")
+    {
+        for(let i = 0; i < rowClass.length; i++)
+        {
+            rowClass[i].style.display = 'table-row';
+        }
+    } 
+   
+}
 //Media Query for tables 
 
-//Initialize Tables
-createTable(desktopTable,shows);
-createTableHead(desktopTable,showKeys);
-
-createMobileTable(mobileTable,shows); 
 
 
 function changeTable(mobile) {
-    
+    let desktopRow = table.getElementsByClassName("shows__info-row-desktop");
+    let mobileRow = table.getElementsByClassName("shows__info-row-mobile");
+
     if(mobile.matches) {
-            mobileTable.style.display = 'table';
-            desktopTable.style.display = 'none';
-         
+        changeRowDisplay("remove", desktopRow);
+        changeRowDisplay("add", mobileRow);
     }
     else 
     {
-            desktopTable.style.display = 'table';
-            mobileTable.style.display = 'none';
-           
+        changeRowDisplay("remove", mobileRow);
+        changeRowDisplay("add", desktopRow);
     }
 }
 var mobileScreen = window.matchMedia("(max-width:767px)");
