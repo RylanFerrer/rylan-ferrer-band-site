@@ -131,6 +131,45 @@
   margin: 0;
 }
 
+.hero-shows {
+  padding: 0 5%;
+  color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-family: AvenirBold;
+  font-size: 14px;
+  line-height: 22px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url("../assets/images/ooz.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/ooz.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 147.5vw;
+}
+
+.hero-shows__header {
+  padding: 0;
+  line-height: 32px;
+  font-size: 30px;
+  margin: 7.8125vw 0 20vw 0;
+}
+
+.hero-shows__subheader {
+  margin: 20vw 0 0 0;
+}
+
+.hero-shows__music-btn {
+  height: 31.25vw;
+}
+
 @media only screen and (min-width: 768px) {
   .hero {
     height: 50.1vw;
@@ -139,6 +178,24 @@
   }
   .hero__header {
     padding: 0 3.125%;
+  }
+  .hero-shows {
+    height: 87.23vw;
+    padding: 0 3.125%;
+  }
+  .hero-shows__subheader {
+    margin-top: 12.5vw;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .hero-shows__header {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 10% 45% 10% 0;
+  }
+  .hero-shows__music-btn {
+    height: 13.02vw;
+    width: 45%;
   }
 }
 
@@ -149,6 +206,27 @@
   .hero__header {
     padding: 0 12.5%;
     margin: 0;
+  }
+  .hero-shows {
+    height: 46.53vw;
+    padding: 0 12.5%;
+  }
+  .hero-shows__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hero-shows__header {
+    margin: 3.33vw 0 0 0;
+    font-size: 60px;
+    line-height: 68px;
+    width: 60%;
+  }
+  .hero-shows__music-btn {
+    height: 10.14vw;
+    margin-left: 4.44vw;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
@@ -403,11 +481,15 @@
 
 #comments-display {
   padding: 0 5%;
-  margin-bottom: 32px;
+  margin-bottom: 10vwpx;
 }
 
 .comments {
   padding: 0 5%;
+}
+
+.comments__header {
+  font-family: AvenirBold;
 }
 
 .comments__form-box {
@@ -425,7 +507,7 @@
 .comments__form-header {
   text-transform: uppercase;
   color: #e1e1e1;
-  margin: 0 0 10px 0;
+  margin: 0 0 3.125vw 0;
 }
 
 .comments__form-name {
@@ -434,7 +516,7 @@
   border-radius: 5px;
   border: 2px solid #AFAFAF;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 6.25vw;
 }
 
 .comments__form-button {

@@ -1,5 +1,6 @@
 const comments = [
-    {
+    
+  {
       avatar: "./assets/images/avatar.jpg",
       name: "Micheal Lyons",
       date: "12/18/2018",
@@ -38,9 +39,11 @@ const comments = [
 
     //create a new comment to push into the front of the comments array
     let comment = {};
+
     comment.name = submitEvent.target.firstName.value;
     comment.date = today;
     comment.comment = submitEvent.target.comment.value;
+    console.log(comment);
     comments.unshift(comment);
 
     //Clear the comment section of all comments and then fill them back up with the comment
@@ -77,7 +80,7 @@ const comments = [
             addCommentInfo(commentSection,comments[i]);
         }
     }
-   function addCommentInfo (section, data,index) {
+   function addCommentInfo (section, data) {
         //create elements to store the data into
         let divNode = document.createElement("div");
         let divHeaderNode = document.createElement("div");
