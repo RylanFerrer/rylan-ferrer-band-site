@@ -1,8 +1,9 @@
 #comments-display {
     padding: 0 5%;
-    margin-bottom: 10vwpx;
+    margin-bottom: 32px;
 }
 .comments {
+   
     padding: 0 5%;
     &__header {
         font-family: AvenirBold;
@@ -22,7 +23,7 @@
            
             text-transform: uppercase;
             color:$mercury;
-            margin:0 0 3.125vw 0;
+            margin:0 0 10px 0;
         }
         &-name {
             background-color: $mercury;
@@ -30,7 +31,7 @@
             border-radius: 5px;
             border: 2px solid $silver;
             width:100%;
-            margin-bottom: 6.25vw;
+            margin-bottom: 20px;
         }
         &-button {
             width: 100%;
@@ -123,11 +124,16 @@
         padding: 0 12.5%;
     }
     .comments {
-       
+        margin:48px 0 40px 0;
         padding:0 12.5%;
         &__form-box {
             padding: 0;
             margin: 0 25.55%;
+        }
+        &__header {
+            margin-bottom:56px;
+            font-size: 36px;
+            line-height: 44px;
         }
     }
    

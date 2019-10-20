@@ -89,7 +89,7 @@
   }
   .navbar__menu-logo {
     padding: 0;
-    margin: auto 0;
+    margin: auto 28px auto 0;
   }
 }
 
@@ -335,7 +335,6 @@
 
 .gallery {
   padding: 0 5%;
-  background-color: #e1e1e1;
 }
 
 .gallery__heading {
@@ -481,7 +480,7 @@
 
 #comments-display {
   padding: 0 5%;
-  margin-bottom: 10vwpx;
+  margin-bottom: 32px;
 }
 
 .comments {
@@ -507,7 +506,7 @@
 .comments__form-header {
   text-transform: uppercase;
   color: #e1e1e1;
-  margin: 0 0 3.125vw 0;
+  margin: 0 0 10px 0;
 }
 
 .comments__form-name {
@@ -516,7 +515,7 @@
   border-radius: 5px;
   border: 2px solid #AFAFAF;
   width: 100%;
-  margin-bottom: 6.25vw;
+  margin-bottom: 20px;
 }
 
 .comments__form-button {
@@ -604,11 +603,17 @@
     padding: 0 12.5%;
   }
   .comments {
+    margin: 48px 0 40px 0;
     padding: 0 12.5%;
   }
   .comments__form-box {
     padding: 0;
     margin: 0 25.55%;
+  }
+  .comments__header {
+    margin-bottom: 56px;
+    font-size: 36px;
+    line-height: 44px;
   }
   .comment-box {
     padding: 0;
@@ -677,7 +682,7 @@
     display: inline-block;
     font-size: 36px;
     line-height: 44px;
-    margin-right: 20px;
+    margin-right: 74px;
   }
   .footer__items-logo {
     float: right;
@@ -722,6 +727,7 @@
   }
   .footer__items-heading {
     padding-top: 48px;
+    margin-right: 58px;
   }
   .footer__items-social-media {
     margin: 0 16px;

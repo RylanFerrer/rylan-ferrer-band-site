@@ -59,13 +59,14 @@
                 display:inline-block;
                 font-size: 36px;
                 line-height: 44px;
-                margin-right: 20px;
+                margin-right: 74px;
             }
 
             &-logo {
                 float:right;
                 display: inline-block;
                 padding-top:32px;
+                
                 
             }
         }
@@ -112,7 +113,8 @@
         padding: 0 12.5%;
         &__items {
             &-heading {
-                padding-top:48px;
+                padding-top:48px;   
+                margin-right: 58px;
             }
             &-social-media {
                 margin: 0 16px;
