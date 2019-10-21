@@ -1,8 +1,8 @@
+//array of random avatar arrays
 const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars/avatar-2.png","./assets/images/avatars/avatar-3.png",
 "./assets/images/avatars/avatar-3.png", "./assets/images/avatars/avatar-4.png","./assets/images/avatars/avatar-5.png","./assets/images/avatars/avatar-6.png",
 "./assets/images/avatars/avatar-7.png","./assets/images/avatars/avatar-8.png","./assets/images/avatars/avatar-9.png"];
 const comments = [
-    
   {
       avatar: "",
       name: "Micheal Lyons",
@@ -25,11 +25,9 @@ const comments = [
         "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!"
     }
    ];
-  
-
+   //constant variables 
    const commentSection = document.getElementById("comments-display");
    const form = document.getElementById("form-section");
-   
    //comment section initialization
    fillCommentSection(comments);   
 
@@ -39,17 +37,13 @@ const comments = [
       return avatars[random];
    }
    form.addEventListener("submit", submitEvent => {
-
     submitEvent.preventDefault();
      //Get the date for today
     let d = new Date();
     let month = d.getMonth() + 1;
-    let today = d.getDate() + "/" + month  + "/" + d.getFullYear(); 
-
+    let today = month  + "/" + d.getDate() + "/" + d.getFullYear(); 
     //create a new comment to push into the front of the comments array
     let comment = {};
-    
-   
     comment.name = submitEvent.target.firstName.value;
     if(comment.name === "Rylan Ferrer" || comment.name === "Rylan")
     {
@@ -61,28 +55,25 @@ const comments = [
     }
     comment.date = today;
     comment.comment = submitEvent.target.comment.value;
-    console.log(comment);
     comments.unshift(comment);
 
     //Clear the comment section of all comments and then fill them back up with the comment
     clearComments(commentSection);
     fillCommentSection(comments);
-
+    //reset the form
     submitEvent.target.reset();
   });
-
    function clearComments(section)
    {
       //get all the elements with the class of comment-box
       let div = section.getElementsByClassName('comment-box');
       console.log(div);
-      //loop at the top of the array and remove each child in the section
+      //loop at the end of the array and remove each child with the class of comment-box in the section
       for(var i = div.length; i > 0;i--)
       {
           section.removeChild(div[i -1]);
       }
-   }
-   
+   }  
    function addCommentClasses(name,date,comment,image,header,div,content)
    {
     name.classList.add("comment-box__name");
@@ -97,13 +88,14 @@ const comments = [
    {
         for(var i =0; i < data.length; i++)
         { 
-           
+           //if there is no avatar for the comment give it a random one 
             if(data[i].avatar === "")
             {
               
               data[i].avatar = makeNewAvatar(avatars);
           
             }
+            //add the data into the comments
             addCommentInfo(commentSection,comments[i]);
         }
     }
@@ -115,15 +107,13 @@ const comments = [
         let nameNode = document.createElement("h5");
         let dateNode = document.createElement("h5");
         let commentNode = document.createElement("h5");
-        let imgNode = document.createElement("img");
-        
-        
+        let imgNode = document.createElement("img");  
+
         //add content into nodes
         nameNode.innerText = data.name;
         dateNode.innerText  = data.date;
         commentNode.innerText = data.comment;
         imgNode.src = data.avatar;
-   
         //add classes 
         addCommentClasses(nameNode,dateNode,commentNode,imgNode,divHeaderNode,divNode,divContentNode);
 
@@ -133,13 +123,10 @@ const comments = [
         divHeaderNode.appendChild(dateNode);
         divContentNode.appendChild(divHeaderNode);
         divContentNode.appendChild(commentNode);
-        
         divNode.appendChild(divContentNode);
-        
-       
-        //append to section
+
+        //append to the section
         section.appendChild(divNode);
-        
    }
   
    

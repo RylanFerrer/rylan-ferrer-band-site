@@ -3,7 +3,6 @@
     margin-bottom: 32px;
 }
 .comments {
-   
     padding: 0 5%;
     &__header {
         font-family: AvenirBold;
@@ -46,11 +45,7 @@
             width:100%;
             background-color: $mercury;
             border:2px solid $silver;
-        }
-        
-       
-       
-        
+        } 
     }
 }
 .comment-box {
@@ -86,8 +81,6 @@
         &__comment {
             margin:0;
         }
-
-    
 }
 
 
@@ -97,7 +90,6 @@
         margin: 0 13.8% 32px 13.8%;
     }
     .comments {
-       
         &__form {
             &-button {
                 width:30%;
@@ -107,7 +99,6 @@
                 margin: 0 13.8%;
             }
         }
-    
     }
     .comment-box {
         &__avatar {

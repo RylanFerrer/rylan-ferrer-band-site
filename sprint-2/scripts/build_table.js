@@ -4,8 +4,6 @@ var shows = [
     { date: "Fri Jul 22 2019", venue: "View Loungue", location: "San Francisco, CA" },
     { date: "Sat Aug 22 2019", venue: "Hyatt Agency", location: "San Francisco, CA" },
     { date: "Fri Sept 05 2019", venue: "Moscow Center", location: "San Francisco, CA" },
-
-
 ]
 //table variables
 const showKeys = Object.keys(shows[0]);
@@ -13,18 +11,13 @@ const table = document.getElementById("main-table");
 //Initialize Tables
 createTable(table,shows);
 createTableHead(table,showKeys);
-
 createMobileTable(table,shows); 
-
-
-
 
 function createTableHead(table, shows) {
     var tHead = table.createTHead();
     var row = tHead.insertRow();
     row.classList.add( "shows__info-row-desktop");
     for (var show of shows) {
-      
         var th = document.createElement('th');
         var text = document.createTextNode( show.toUpperCase());
         th.classList.add("shows__info-header");
@@ -32,53 +25,32 @@ function createTableHead(table, shows) {
         row.appendChild(th);
     }
 }
-
-
 function createTable(table, shows) {
-    for (var show of shows) {
-        var row = table.insertRow();
+    for (let show of shows) {
+        let row = table.insertRow();
         row.classList.add("shows__info-row--border", "shows__info-row-desktop");
 
         for (key in show) {
         
-            var cell = row.insertCell();
-            var text = document.createTextNode(show[key]);
+            let cell = row.insertCell();
+            let text = document.createTextNode(show[key]);
             cell.appendChild(text);
-            
         }
-
         let buttonCell = row.insertCell();
         let buttonNode = document.createElement("button");
         buttonNode.innerText = "Buy Your Tickets";
         buttonCell.classList.add("shows__info-btn-container");
         buttonNode.classList.add("shows__info-btn");
         buttonCell.appendChild(buttonNode);  
-      
-        
     }
     
 }
-
-
-
 function createMobileTable(table,data)
 {
     for (var show of shows)
     {
         for (key in show )
         {
-            //keys
-            /* 
-            let keyRow = table.insertRow();
-            let keyCell = keyRow.insertCell();
-
-             let h4 = document.createElement("h4");
-             h4.appendChild(key.toUpperCase());
-            keyCell.appendChild(h4);
-            
-            
-            
-            */
             let header = key.toUpperCase();
             let row = table.insertRow();
             row.classList.add("shows__info-row-mobile");
@@ -101,12 +73,12 @@ function createMobileTable(table,data)
             cell.innerHTML = "<h4 class = 'shows__info-header'>"+ header + "</h4>";
             cell.appendChild(textNode);
         }
-        createButton(table, "mobile");
+        createButton(table);
     }
 
 }
 
-function createButton(table,type) {
+function createButton(table) {
     let row = table.insertRow();
     row.classList.add("shows__info-row-mobile");
     let buttonCell = row.insertCell();
@@ -116,7 +88,6 @@ function createButton(table,type) {
     buttonNode.classList.add("shows__info-btn");
     buttonCell.appendChild(buttonNode);
 }
-
 function changeRowDisplay(type, rowClass)
 {
     if (type === "remove")
@@ -136,9 +107,6 @@ function changeRowDisplay(type, rowClass)
    
 }
 //Media Query for tables 
-
-
-
 function changeTable(mobile) {
     let desktopRow = table.getElementsByClassName("shows__info-row-desktop");
     let mobileRow = table.getElementsByClassName("shows__info-row-mobile");
@@ -153,8 +121,6 @@ function changeTable(mobile) {
         changeRowDisplay("add", desktopRow);
     }
 }
-var mobileScreen = window.matchMedia("(max-width:767px)");
-
+let mobileScreen = window.matchMedia("(max-width:767px)");
 changeTable(mobileScreen);
-
 mobileScreen.addListener(changeTable);

@@ -1,14 +1,11 @@
 .shows {
     padding: 0 5%;
-
     &__header {
         margin: 32px 0 16px 0;
         font-size:21px;
         line-height: 22px;
         font-family:AvenirBold;
-
     }
-
     &__table {
         width:100%;
         margin-bottom:16px;
@@ -18,17 +15,15 @@
     &__info 
     {
         &-header
-        {       margin: 24px 0 16px 0;
-                color: $silver;
-            
+        {      
+             margin: 24px 0 16px 0;
+             color: $silver;
         }
-
         &-text {
             margin: 0;
             &--date {
                 font-family:AvenirBold;
             }
-        
         }
         &-btn {
             background-color: $black;
@@ -40,17 +35,14 @@
 
             &-container {
                 padding-bottom: 20px;
-            }
-            
+            } 
         }
-
         &-border {
             border-bottom: 1px solid $silver;
             margin-bottom: 16px;
         }
     }
 }
-
 @include medium {
     .shows {
         padding: 0 3.125%;
@@ -67,11 +59,8 @@
                 border-bottom: 1px solid $mercury;
             }
         }
-
     }
-  
 }
-
 @include huge {
     .shows {
         padding: 0 12.5%;
