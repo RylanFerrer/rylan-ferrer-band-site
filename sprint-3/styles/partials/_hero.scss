@@ -1,0 +1,115 @@
+.hero {
+    display: flex;
+    align-items: center;
+    font-family: AvenirBold;
+    font-size:14px;
+    line-height: 22px;
+    background-image: linear-gradient(
+        rgba($black,0.5),
+        rgba($black,0.5)
+    ), url("../assets/images/guitar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 57.188vw;
+    width:100%;
+    margin-bottom: 32px;
+
+    &__header {
+        padding: 0 5%;
+        color: $white;
+        margin:0;
+    }
+    
+    &-shows {
+        padding: 0 5%;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-family: AvenirBold;
+        font-size:14px;
+        line-height: 22px;
+        background-image: linear-gradient(
+            rgba($black,0.5),
+            rgba($black,0.5)
+        ), url("../assets/images/ooz.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 147.5vw;
+       &__header {
+           padding: 0;
+           line-height: 32px;
+           font-size: 30px;
+           margin:7.8125vw 0 20vw 0;
+       }
+        &__subheader {
+            margin: 20vw 0 0 0;
+        }
+
+        &__music-btn {
+            height: 31.25vw;
+        }
+    }
+}
+
+
+
+@include medium {
+    .hero {
+        height:50.1vw;
+        font-size: 36px;
+        line-height: 44px;
+        &__header {
+            padding: 0 3.125%;
+        }
+        &-shows {
+            height: 87.23vw;
+            padding: 0 3.125%;
+            &__subheader {
+                margin-top:12.5vw ;
+                font-size: 24px;
+                line-height: 32px;
+            }
+            &__header {
+                font-size: 36px;
+                line-height: 44px;
+                margin: 10% 45% 10% 0;
+            }
+            &__music-btn {
+                height: 13.02vw;
+                width: 45%;
+            }
+        }
+    }
+}
+
+@include huge {
+    .hero {
+        height: 46.53vw;
+        &__header {
+            padding:0 12.5%;
+            margin: 0;
+        }
+        &-shows {
+            height: 46.53vw;
+            padding:0 12.5%;
+            &__main{
+                display: flex;
+            }
+            &__header {
+                margin: 3.33vw 0 0 0;
+                font-size: 60px;
+                line-height: 68px;
+                width:60%;
+            }
+            &__music-btn {
+                height: 10.14vw;
+                margin-left:4.44vw;
+                align-self: flex-end;
+            }
+        }
+    }
+}
+

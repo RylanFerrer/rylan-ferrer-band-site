@@ -1,0 +1,135 @@
+#comments-display {
+    padding: 0 5%;
+    margin-bottom: 32px;
+}
+.comments {
+    padding: 0 5%;
+    &__header {
+        font-family: AvenirBold;
+    }
+    &__form-box 
+    {
+        display: flex;
+        border-bottom: 2px solid $silver;
+    }
+    &__form {
+        &-section {
+            width: 80%;
+            margin-left:auto;
+        }
+
+        &-header {
+           
+            text-transform: uppercase;
+            color:$mercury;
+            margin:0 0 10px 0;
+        }
+        &-name {
+            background-color: $mercury;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid $silver;
+            width:100%;
+            margin-bottom: 20px;
+        }
+        &-button {
+            width: 100%;
+            margin: 15px 0 32px 0;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #323232;
+            color: white;
+        }
+        &-textbox{
+            height:100px;
+            width:100%;
+            background-color: $mercury;
+            border:2px solid $silver;
+        } 
+    }
+}
+.comment-box {
+    border-bottom: 2px solid $silver;
+    margin-top:20px;
+        padding: 0 5%;
+        display: flex;
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__name {
+            margin-top:0;
+        }
+        &__date {
+            margin-top: 0;
+        }
+        &__avatar 
+        {
+            height:30px;
+            width:30px;
+            border-radius: 50%;
+            
+            &--form {
+                margin-top: 28px;
+            }
+        }
+        &__main-content 
+        {
+            width: 85%;
+            margin: 0 0 20px 20px;
+        }
+        &__comment {
+            margin:0;
+        }
+}
+
+
+@include medium {
+    #comments-display {
+        padding: 0 3.125%;
+        margin: 0 13.8% 32px 13.8%;
+    }
+    .comments {
+        &__form {
+            &-button {
+                width:30%;
+                float:right;
+            }
+            &-box {
+                margin: 0 13.8%;
+            }
+        }
+    }
+    .comment-box {
+        &__avatar {
+            height: 48px;
+            width: 48px;
+        }
+    }
+}
+
+
+@include huge {
+    #comments-display {
+        margin: 0 19.2% 20px 19.2%;
+        padding: 0 12.5%;
+    }
+    .comments {
+        margin:48px 0 40px 0;
+        padding:0 12.5%;
+        &__form-box {
+            padding: 0;
+            margin: 0 25.55%;
+        }
+        &__header {
+            margin-bottom:56px;
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+   
+    .comment-box {
+        padding: 0;
+        margin: 20px 0 0 0;
+    }
+}
