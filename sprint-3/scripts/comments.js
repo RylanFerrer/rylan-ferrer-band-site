@@ -84,7 +84,6 @@ const comments = [
    }
    function fillCommentSection(data) 
    {
-     console.log("I got used");
         for(var i =0; i < data.length; i++)
         { 
             //add the data into the comments
@@ -94,22 +93,25 @@ const comments = [
    function addCommentInfo (section, data) {
         if(data.avatar === undefined)
         {
-          
           data.avatar = makeNewAvatar(avatars);
-      
         }
         //create elements to store the data into
         let divNode = document.createElement("div");
         let divHeaderNode = document.createElement("div");
         let divContentNode = document.createElement('div');
+        let likeNode = document.createElement('h5');
         let nameNode = document.createElement("h5");
         let dateNode = document.createElement("h5");
         let commentNode = document.createElement("h5");
         let imgNode = document.createElement("img");  
 
         //add content into nodes
+        let days = 1000 * 60 * 60 * 24;
+        let time = new Date();
+        let today = time.getTime();
         nameNode.innerText = data.name;
-        dateNode.innerText  = `${data.likes} Likes`;
+        likeNode.innerText = `${data.likes} Likes`
+        dateNode.innerText  = `${Math.ceil((today - data.timestamp)/days)} Day(s) Ago`;
         commentNode.innerText = data.comment;
         imgNode.src = data.avatar;
         //add classes 
@@ -119,7 +121,9 @@ const comments = [
         divNode.appendChild(imgNode);
         divHeaderNode.appendChild(nameNode);
         divHeaderNode.appendChild(dateNode);
+        
         divContentNode.appendChild(divHeaderNode);
+        //divContentNode.appendChild(likeNode);
         divContentNode.appendChild(commentNode);
         divNode.appendChild(divContentNode);
 
