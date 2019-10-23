@@ -401,6 +401,15 @@
   }
 }
 
+.deleteBtn {
+  margin-top: 20px;
+  float: right;
+}
+
+.deleteBtn:hover {
+  color: red;
+}
+
 .shows {
   padding: 0 5%;
 }
