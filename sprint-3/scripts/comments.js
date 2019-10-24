@@ -6,8 +6,8 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
    const commentsGetURL = axios.get(`${url}comments${api_key}`);
    const commentsURL = (`${url}comments${api_key}`);
    commentsGetURL.then(result => {
-     console.log(result.data);
     fillCommentSection(result.data);
+    addDeleteEvent(result.data);
    });
 
    //constant variables 
@@ -34,7 +34,7 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
     comment:submitEvent.target.comment.value
     }).then(response => {
       addCommentInfo(commentSection,response.data);
-      addOneListener(response.data);
+      addOneDeleteEvent(response.data);
       submitEvent.target.reset();
     });
 
@@ -82,7 +82,7 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         let divContentNode = document.createElement('div');
         let deleteNode = document.createElement('i');
         deleteNode.classList.add("fas", "fa-trash" , "deleteBtn");
-        deleteNode.id = data.id;
+       // deleteNode.id = data.id;
         let likeNode = document.createElement('h5');
         let nameNode = document.createElement("h5");
         let dateNode = document.createElement("h5");
@@ -120,27 +120,30 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
       
    }
   
-   addEventListenerz();
-function addOneListener(data) {
-  let checkID = document.getElementById(data.id);
-  checkID.addEventListener("click", event => {
-    axios.delete(`${url}comments/${checkID.id}${api_key}`).then(response => {
-      let div = document.getElementById(event.target.id);
-      console.log(div);
-      div.remove();
+
+function addOneDeleteEvent(data) {
+  let commentBox = document.getElementById(data.id);
+  let button = commentBox.querySelector("i");
+  
+  button.addEventListener("click", event => {
+  
+    axios.delete(`${url}comments/${commentBox.id}${api_key}`).then(response => {
+      commentBox.remove();
       
     });
   });
 }
-function addEventListenerz() {
+function addDeleteEvent(data) {
   setTimeout(function() {
 
-  for(let i = 0; i < deleteBtn.length; i++)
+  for(let i = 0; i < data.length; i++)
   {
-    deleteBtn[i].addEventListener("click", event => {
-      axios.delete(`${url}comments/${event.target.id}${api_key}`).then(response => {
-        let div = document.getElementById(event.target.id);
-        div.remove();
+    let commentBox = document.getElementById(data[i].id);
+    let button = commentBox.querySelector('i');
+    button.addEventListener("click", event => {
+      axios.delete(`${url}comments/${commentBox.id}${api_key}`).then(response => {
+        
+        commentBox.remove();
         
       });
      });
