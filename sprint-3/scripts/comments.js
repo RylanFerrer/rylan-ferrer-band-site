@@ -8,6 +8,7 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
    commentsGetURL.then(result => {
     fillCommentSection(result.data);
     addDeleteEvent(result.data);
+    addLikeEvent(result.data);
    });
 
    //constant variables 
@@ -35,6 +36,7 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
     }).then(response => {
       addCommentInfo(commentSection,response.data);
       addOneDeleteEvent(response.data);
+      addLikeEvent(response.data);
       submitEvent.target.reset();
     });
 
@@ -80,10 +82,14 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         let divNode = document.createElement("div");
         let divHeaderNode = document.createElement("div");
         let divContentNode = document.createElement('div');
+        let divFunctionNode = document.createElement("div");
         let deleteNode = document.createElement('i');
         deleteNode.classList.add("fas", "fa-trash" , "deleteBtn");
        // deleteNode.id = data.id;
         let likeNode = document.createElement('h5');
+        let likeButton = document.createElement('i');
+        likeButton.classList.add('fas', 'fa-heart','comment-box__like-btn');
+        likeNode.classList.add('comments__like-number')
         let nameNode = document.createElement("h5");
         let dateNode = document.createElement("h5");
         let commentNode = document.createElement("h5");
@@ -93,8 +99,10 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         let days = 1000 * 60 * 60 * 24;
         let time = new Date();
         let today = time.getTime();
+
+
         nameNode.innerText = data.name;
-        likeNode.innerText = `${data.likes} Likes`
+        likeNode.innerText = `${data.likes}`
         dateNode.innerText  = `${Math.ceil((today - data.timestamp)/days)} Day(s) Ago`;
         commentNode.innerText = data.comment;
         imgNode.src = data.avatar;
@@ -105,12 +113,12 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         divNode.appendChild(imgNode);
         divHeaderNode.appendChild(nameNode);
         divHeaderNode.appendChild(dateNode);
-        
-        
         divContentNode.appendChild(divHeaderNode);
-        //divContentNode.appendChild(likeNode);
         divContentNode.appendChild(commentNode);
-        divContentNode.appendChild(deleteNode);
+        divFunctionNode.appendChild(likeNode);
+        divFunctionNode.appendChild(likeButton);
+        divFunctionNode.appendChild(deleteNode);
+        divContentNode.appendChild(divFunctionNode);
         divNode.appendChild(divContentNode);
       
         divNode.id = data.id;
@@ -123,7 +131,7 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
 
 function addOneDeleteEvent(data) {
   let commentBox = document.getElementById(data.id);
-  let button = commentBox.querySelector("i");
+  let button = commentBox.querySelector(".deleteBtn");
   
   button.addEventListener("click", event => {
   
@@ -133,14 +141,38 @@ function addOneDeleteEvent(data) {
     });
   });
 }
+function addLikeEvent(data) {
+  
+  setTimeout(() => {
+    for (i = 0; i < data.length; i++)
+    {
+      let commentBox = document.getElementById(data[i].id);
+      let likeBtn = commentBox.querySelector('.comment-box__like-btn');
+      likeBtn.addEventListener("click", event => {
+        axios.put(`${url}comments/${commentBox.id}/like${api_key}`).then(response => {
+          console.log(`${url}comments/${commentBox.id}/like${api_key}`);
+          updateLikes(response.data);
+
+        });
+      });
+
+    }
+  }, 200)
+}
+function updateLikes(data) {
+  let commentBox = document.getElementById(data.id);
+  let numString = commentBox.querySelector(".comments__like-number");
+  numString.innerText = data.likes;
+}
 function addDeleteEvent(data) {
   setTimeout(function() {
 
   for(let i = 0; i < data.length; i++)
   {
     let commentBox = document.getElementById(data[i].id);
-    let button = commentBox.querySelector('i');
+    let button = commentBox.querySelector('.deleteBtn');
     button.addEventListener("click", event => {
+      button.setAttribute("disabled","disabled");
       axios.delete(`${url}comments/${commentBox.id}${api_key}`).then(response => {
         
         commentBox.remove();

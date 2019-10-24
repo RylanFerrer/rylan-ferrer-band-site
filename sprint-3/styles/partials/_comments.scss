@@ -1,9 +1,22 @@
+.deleteBtn{
+    float: right;
+}
+.deleteBtn:hover {
+    color:red;
+}
 #comments-display {
     padding: 0 5%;
     margin-bottom: 32px;
 }
 .comments {
     padding: 0 5%;
+    &__like-number {
+        display: inline-block;
+        margin: 0 10px 0  0;
+       
+    }
+  
+    
     &__header {
         font-family: AvenirBold;
     }
@@ -53,6 +66,11 @@
     margin-top:20px;
         padding: 0 5%;
         display: flex;
+        &__like-btn {
+            &:hover {
+                color:red;
+            }
+        }
         &__header {
             display: flex;
             justify-content: space-between;

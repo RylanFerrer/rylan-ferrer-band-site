@@ -401,15 +401,6 @@
   }
 }
 
-.deleteBtn {
-  margin-top: 20px;
-  float: right;
-}
-
-.deleteBtn:hover {
-  color: red;
-}
-
 .shows {
   padding: 0 5%;
 }
@@ -504,6 +495,14 @@
   }
 }
 
+.deleteBtn {
+  float: right;
+}
+
+.deleteBtn:hover {
+  color: red;
+}
+
 #comments-display {
   padding: 0 5%;
   margin-bottom: 32px;
@@ -511,6 +510,11 @@
 
 .comments {
   padding: 0 5%;
+}
+
+.comments__like-number {
+  display: inline-block;
+  margin: 0 10px 0  0;
 }
 
 .comments__header {
@@ -567,6 +571,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.comment-box__like-btn:hover {
+  color: red;
 }
 
 .comment-box__header {
