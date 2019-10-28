@@ -98,7 +98,7 @@
     padding: 0 12.5%;
   }
   .navbar__menu-logo {
-    margin-right: 28px;
+    margin-right: 56px;
   }
   .navbar__menu-item {
     margin: 0 28px;
@@ -334,6 +334,7 @@
 }
 
 .gallery {
+  background-color: #fafafa;
   padding: 0 5%;
 }
 
@@ -369,6 +370,7 @@
     padding-bottom: 30px;
   }
   .gallery__photos-art {
+    margin-bottom: 24px;
     -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
     -webkit-transition: all 0.5s;
@@ -718,6 +720,9 @@
     line-height: 44px;
     margin-right: 74px;
   }
+  .footer__items-social-media {
+    margin-right: 30px;
+  }
   .footer__items-logo {
     float: right;
     display: inline-block;
@@ -761,7 +766,7 @@
   }
   .footer__items-heading {
     padding-top: 48px;
-    margin-right: 58px;
+    margin-right: 2%;
   }
   .footer__items-social-media {
     margin: 0 16px;

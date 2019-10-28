@@ -8,34 +8,26 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
    commentsGetURL.then(result => {
     fillCommentSection(result.data);
    });
-
    //constant variables 
    const commentSection = document.getElementById("comments-display");
    const form = document.getElementById("form-section");
    let deleteBtn = document.getElementsByClassName("deleteBtn");
    
-  
-   //comment section initialization
-   //fillCommentSection(comments);   
-
    function makeNewAvatar(avatars)
    {
      let random = Math.floor(Math.random() * avatars.length);
       return avatars[random];
    }
    
-    
-   
-
    form.addEventListener("submit", submitEvent => {
    axios.post(commentsURL,{
     name:submitEvent.target.firstName.value,
     comment:submitEvent.target.comment.value
     }).then(response => {
-      addCommentInfo(commentSection,response.data);
+      reload();
       submitEvent.target.reset();
     });
-
+   
     event.preventDefault();
   });
   
@@ -43,13 +35,20 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
    {
       //get all the elements with the class of comment-box
       let div = section.getElementsByClassName('comment-box');
-      console.log(div);
       //loop at the end of the array and remove each child with the class of comment-box in the section
       for(var i = div.length; i > 0;i--)
       {
           section.removeChild(div[i -1]);
       }
    }  
+   function fillCommentSection(data) 
+   {
+        for(var i =0; i < data.length; i++)
+        { 
+            //add the data into the comments
+            addCommentInfo(commentSection,data[i]);
+        }
+    }
    function addCommentClasses(name,date,comment,image,header,div,content)
    {
     name.classList.add("comment-box__name");
@@ -60,14 +59,6 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
     div.classList.add("comment-box");
     content.classList.add("comment-box__main-content");
    }
-   function fillCommentSection(data) 
-   {
-        for(var i =0; i < data.length; i++)
-        { 
-            //add the data into the comments
-            addCommentInfo(commentSection,data[i]);
-        }
-    }
     function convertTimeStamp(data)
     {
         let days = 1000 * 60 * 60 * 24;
@@ -91,13 +82,11 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         let dateNode = document.createElement("h5");
         let commentNode = document.createElement("h5");
         let imgNode = document.createElement("img");  
-
-
         nameNode.innerText = data.name;
         likeNode.innerText = `${data.likes}`
         dateNode.innerText  = convertTimeStamp(data.timestamp);
         commentNode.innerText = data.comment;
-        imgNode.src = makeNewAvatar(avatars);
+        imgNode.src =  data.name === "James Charles" ? "./assets/images/avatars/sister.jpg":makeNewAvatar(avatars);
         //add classes 
         addCommentClasses(nameNode,dateNode,commentNode,imgNode,divHeaderNode,divNode,divContentNode);
 
@@ -112,45 +101,43 @@ const avatars = ["./assets/images/avatars/avatar-1.png","./assets/images/avatars
         divFunctionNode.appendChild(deleteNode);
         divContentNode.appendChild(divFunctionNode);
         divNode.appendChild(divContentNode);
-      
         divNode.id = data.id;
-
         //append to the section
         section.insertBefore(divNode,section.childNodes[0]);
-
         addOneDeleteEvent(data);
         addLikeEvent(data);
    }
-  
-
 function addOneDeleteEvent(data) {
   let commentBox = document.getElementById(data.id);
-  console.log(data.id);
   let button = commentBox.querySelector(".deleteBtn");
-  
   button.addEventListener("click", event => {
-  
     axios.delete(`${url}comments/${commentBox.id}${api_key}`).then(response => {
       commentBox.remove();
-      
     });
   });
 }
 function addLikeEvent(data) {
- 
   setTimeout(() => {
       let commentBox = document.getElementById(data.id);
       let likeBtn = commentBox.querySelector('.comment-box__like-btn');
       likeBtn.addEventListener("click", event => {
         axios.put(`${url}comments/${commentBox.id}/like${api_key}`).then(response => {
           updateLikes(response.data);
-
         });
       });
   }, 200)
+}
+function reload() {
+
+   axios.get(commentsURL).then(result => {
+     console.log(result.data);
+     clearComments(commentSection);
+    fillCommentSection(result.data);
+   });
 }
 function updateLikes(data) {
   let commentBox = document.getElementById(data.id);
   let numString = commentBox.querySelector(".comments__like-number");
   numString.innerText = data.likes;
 }
+

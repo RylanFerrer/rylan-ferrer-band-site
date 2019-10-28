@@ -57,6 +57,9 @@
                 line-height: 44px;
                 margin-right: 74px;
             }
+            &-social-media {
+                margin-right: 30px;
+            }
             &-logo {
                 float:right;
                 display: inline-block;
@@ -82,7 +85,6 @@
                 margin-bottom: 10px;
             }
         }
-        
         &__copyright {
             display: block;
             font-size: 13px;
@@ -96,7 +98,6 @@
 
         }
     }
- 
 }
 
 
@@ -106,7 +107,7 @@
         &__items {
             &-heading {
                 padding-top:48px;   
-                margin-right: 58px;
+                margin-right: 2%;
             }
             &-social-media {
                 margin: 0 16px;
